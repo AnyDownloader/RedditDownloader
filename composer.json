@@ -1,0 +1,43 @@
+{
+  "name": "any-downloader/reddit-downloader",
+  "type": "library",
+  "description": "Extract videos from Reddit",
+  "keywords": [
+    "reddit downloader",
+    "reddit video downloader",
+    "reddit video extractor"
+  ],
+  "homepage": "https://iwannacode.net",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Oleksandr Pinchuk",
+      "email": "intracomof@gmail.com",
+      "homepage": "https://iwannacode.net",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^7.2.5",
+    "any-downloader/download-manager": "*",
+    "symfony/http-client": ">=5.3.3",
+    "ext-json": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "9.5.x-dev"
+  },
+  "autoload": {
+    "psr-4": {
+      "AnyDownloader\\RedditDownloader\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "AnyDownloader\\RedditDownloader\\Test\\": "tests"
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit"
+  },
+  "minimum-stability": "dev"
+}
