@@ -5,7 +5,10 @@ use AnyDownloader\DownloadManager\Exception\BadResponseException;
 use AnyDownloader\DownloadManager\Exception\NothingToExtractException;
 use AnyDownloader\DownloadManager\Exception\NotValidUrlException;
 use AnyDownloader\DownloadManager\Handler\BaseHandler;
+use AnyDownloader\DownloadManager\Model\Attribute;
 use AnyDownloader\DownloadManager\Model\Attribute\AuthorAttribute;
+use AnyDownloader\DownloadManager\Model\Attribute\Count\CommentsCountAttribute;
+use AnyDownloader\DownloadManager\Model\Attribute\Count\LikesCountAttribute;
 use AnyDownloader\DownloadManager\Model\Attribute\TitleAttribute;
 use AnyDownloader\DownloadManager\Model\FetchedResource;
 use AnyDownloader\DownloadManager\Model\ResourceItem\ResourceItemFactory;
@@ -108,6 +111,14 @@ final class RedditHandler extends BaseHandler
 
         if (isset($data->title)) {
             $resource->addAttribute(new TitleAttribute($data->title));
+        }
+
+        if (isset($data->score)) {
+            $resource->addAttribute(new LikesCountAttribute($data->score));
+        }
+
+        if (isset($data->num_comments)) {
+            $resource->addAttribute(new CommentsCountAttribute($data->num_comments));
         }
 
         if(isset($data->author)) {

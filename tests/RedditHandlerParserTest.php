@@ -50,6 +50,8 @@ class RedditHandlerParserTest extends TestCase
             ],
             'attributes' => [
                 'title' => 'Just a happy Loki',
+                'likes_count' => 477,
+                'comments_count' => 3,
                 'author' => [
                     'id' => '',
                     'avatar_url' => '',
