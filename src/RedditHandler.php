@@ -71,7 +71,6 @@ final class RedditHandler extends BaseHandler
                 ]
             ]
         );
-
         if ($response->getStatusCode() != self::SUCCESS_HTTP_CODE) {
             throw new BadResponseException();
         }
